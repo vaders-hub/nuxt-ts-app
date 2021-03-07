@@ -24,6 +24,8 @@ export default {
   plugins: [
     '~/plugins/axios',
     '~/plugins/testPlugin',
+    { src: '~/plugins/btreeview', ssr: false },
+    { src: '~/plugins/ls', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

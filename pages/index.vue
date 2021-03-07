@@ -22,7 +22,6 @@ export default class User extends Vue {
   public updateUserInfo!: (data: object) => void
   mounted() {
     this.localData = { ...this.localData, ...this.info }
-    this.$axios.get('test')
     this.$injectway.hide()
     console.log('this.$log',this.$injectway)
   }
