@@ -25,7 +25,6 @@ export default {
     '~/plugins/axios',
     '~/plugins/testPlugin',
     { src: '~/plugins/btreeview', ssr: false },
-    { src: '~/plugins/ls', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -40,11 +39,21 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
   ],
+
+  axios: {
+// proxy:true,
+// baseURL:'http://localhost:3000'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
 
-  buildDir: 'nuxt-dist'
+  buildDir: 'nuxt-dist',
+
+  proxy: {
+    '/test':{ target: 'http://localhost:3001/', pathRewrite: {'^/test/': ''}}
+  }
 }
